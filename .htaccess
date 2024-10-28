@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteBase /Networky/
+
+# Set default directory index to client/index.php
+DirectoryIndex client/index.php
+
+# Redirect root to client/index.php if accessed without an explicit file
+RewriteRule ^$ client/index.php [L]
+
+# Allow direct access to dashboard.php
+RewriteRule ^dashboard\.php$ client/dashboard.php [L]
+
+# Redirect /dashboard (without .php) to client/dashboard.php
+RewriteRule ^dashboard$ client/dashboard.php [L]
+
+# Allow direct access to logout.php
+RewriteRule ^logout\.php$ client/logout.php [L]  # Ensure this path is correct
